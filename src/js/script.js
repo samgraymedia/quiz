@@ -22,8 +22,7 @@ $.ajax({
   });
 });
 $(".answer").click(function(){
-  console.log($(this).attr('data-id'));
-  if ($(this).attr("data-id") !== "6" ) {
+  if ($(this).attr("data-id") !== "5" ) {
     console.log("WRONG");
   } else {
     console.log("RIGHT");
