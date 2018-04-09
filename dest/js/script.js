@@ -21,15 +21,16 @@ $.ajax({
 
   });
 });
+//on click on any answer to set the answerID to its data-id and remove the disabled on the button, add the selected class to the answer and remove any others with the selected class.
 $(".answer").click(function(){
   answerID = $(this).attr("data-id");
   $(".submit").removeAttr("disabled");
   $(".submit").removeClass("disabled");
-
-  console.log(answerID);
   $('button').removeClass('selected');
   $(this).addClass('selected');
 });
+
+//on submit check to see if the answer is correct and display if it is to the user
 $(".submit").click(function(){
   if (answerID == "5") {
     console.log("right");
@@ -38,6 +39,7 @@ $(".submit").click(function(){
     $('.wrong').css('display', 'flex');
   }
 });
+// allows the user to play again.
 $(".tryAgain").click(function(){
   answerID = "0";
   $('.wrong').css('display', 'none');
