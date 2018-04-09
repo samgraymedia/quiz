@@ -154,7 +154,15 @@
   align-items: center;
   justify-content: center;
   height: 100px;
-  display: none; }
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  display: none;
+  flex-flow: column; }
+  .right .tryAgain {
+    width: 20%;
+    height: 20px; }
 
 .wrong {
   position: absolute;
