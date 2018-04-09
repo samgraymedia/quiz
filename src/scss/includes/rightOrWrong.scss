@@ -1,0 +1,25 @@
+.right{
+  position: absolute;
+  background-color: green;
+  width: 100vw;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  height: 100px;
+  display: none;
+}
+.wrong{
+  position: absolute;
+  background-color: red;
+  width: 100vw;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  height: 100px;
+  display: none;
+  flex-flow:column;
+  .tryAgain{
+    width: 20%;
+    height: 20px;
+  }
+}

@@ -1,5 +1,5 @@
 //a var to track which book a user has selected, on load its the first in the array.
-var obj = 0;
+var answerID = "";
 
 $.ajax({
   type: "GET",
@@ -22,11 +22,29 @@ $.ajax({
   });
 });
 $(".answer").click(function(){
-  if ($(this).attr("data-id") !== "5" ) {
-    console.log("WRONG");
+  answerID = $(this).attr("data-id");
+  $(".submit").removeAttr("disabled");
+  $(".submit").removeClass("disabled");
+
+  console.log(answerID);
+  $('button').removeClass('selected');
+  $(this).addClass('selected');
+});
+$(".submit").click(function(){
+  if (answerID == "5") {
+    console.log("right");
+    $('.right').css('display', 'flex');
   } else {
-    console.log("RIGHT");
+    $('.wrong').css('display', 'flex');
   }
+});
+$(".tryAgain").click(function(){
+  answerID = "0";
+  $('.wrong').css('display', 'none');
+  $('.right').css('display', 'none');
+  $(".submit").attr('disabled', 'true');
+  $('button').removeClass('selected');
+  $(".submit").addClass("disabled");
 });
 
   },

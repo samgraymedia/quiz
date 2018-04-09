@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.wrap {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center; }
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 10000px 0; } }
+
+@-webkit-keyframes move-clouds-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 10000px 0; } }
+
+@-moz-keyframes move-clouds-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 10000px 0; } }
+
+@-ms-keyframes move-clouds-back {
+  from {
+    background-position: 0; }
+  to {
+    background-position: 10000px 0; } }
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.stars {
+  background: #000 url(http://sylvaingarnot.fr/media/stars.png) repeat top center;
+  z-index: -3; }
+
+.twinkling {
+  background: transparent url(http://sylvaingarnot.fr/media/twinkling.png) repeat top center;
+  z-index: -2;
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite; }
+
+.clouds {
+  background: transparent url(http://sylvaingarnot.fr/media/clouds.png) repeat top center;
+  z-index: -3;
+  -moz-animation: move-clouds-back 200s linear infinite;
+  -ms-animation: move-clouds-back 200s linear infinite;
+  -o-animation: move-clouds-back 200s linear infinite;
+  -webkit-animation: move-clouds-back 200s linear infinite;
+  animation: move-clouds-back 200s linear infinite; }
+
+.quiz {
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  height: 500px;
+  justify-content: space-around;
+  padding: 30px; }
+  .quiz .question {
+    font-size: 2rem; }
+  .quiz .answers {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; }
+    .quiz .answers button {
+      width: 30%;
+      height: 100px;
+      margin: 10px;
+      box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+      background-image: linear-gradient(to right, #216A94, #030201);
+      background-color: #0B589C;
+      background-size: 200% auto;
+      background-position: 100% 0;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+      border: none; }
+      .quiz .answers button:hover {
+        background-position: 0% 0%; }
+    .quiz .answers .selected {
+      background-position: 0% 0%; }
+  .quiz .submit {
+    display: inline-block;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+    font-family: Arial;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 10px 58px;
+    box-shadow: inset 0 1px 0 0 #FFF6CE,inset 0 -1px 0 0 #E3C852,inset 0 0 0 1px #FCE88D,0 2px 4px 0 #D4D4D4;
+    background-image: linear-gradient(to left, #216A94, #030201);
+    background-color: #0B589C;
+    background-size: 200% auto;
+    background-position: 100% 0;
+    transition: all 0.3s ease-in-out; }
+    .quiz .submit:hover {
+      background-position: 0% 0%; }
+  .quiz .disabled {
+    background-image: linear-gradient(to left, #777777, #000);
+    color: rgba(255, 255, 255, 0.3); }
+
+.right {
+  position: absolute;
+  background-color: green;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  display: none; }
+
+.wrong {
+  position: absolute;
+  background-color: red;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  display: none;
+  flex-flow: column; }
+  .wrong .tryAgain {
+    width: 20%;
+    height: 20px; }
+
+body {
+  background-color: #e4dfda; }
